@@ -6,7 +6,8 @@ import {
   ApexChart,
   ApexXAxis,
   ApexTitleSubtitle,
-  ApexNonAxisChartSeries
+  ApexNonAxisChartSeries,
+  ApexFill
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
@@ -28,6 +29,7 @@ export class BasicBarChartComponent {
   @Input() chart!: ApexChart;
   @Input() xaxis!: ApexXAxis;
   @Input() title!: ApexTitleSubtitle;
+  @Input() fill!: ApexFill;
   constructor() {
     this.series = [
       {
@@ -38,8 +40,20 @@ export class BasicBarChartComponent {
 
     this.chart = {
       height: 350,
+      background: "white",
       type: "bar",
-      background: "white"
+      selection: {
+        enabled: true,
+        type: 'x',
+        fill: {
+          color: '#24292e',
+          opacity: 0.1
+        },
+        xaxis: {
+          min: 2011,
+          max: 2013
+        }
+      }
     }
 
     this.xaxis = {
@@ -95,6 +109,9 @@ export class BasicBarChartComponent {
         fontSize: "25",
         color: "balck"
       }
-    }
+    },
+      this.fill = {
+        colors: ["#f00"]
+      }
   }
 }

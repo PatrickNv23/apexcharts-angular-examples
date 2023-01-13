@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexLegend, ApexStroke, ApexTitleSubtitle, ApexXAxis, ApexYAxis } from 'ng-apexcharts';
+import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexFill, ApexLegend, ApexStroke, ApexTitleSubtitle, ApexXAxis, ApexYAxis } from 'ng-apexcharts';
 
 @Component({
   selector: 'app-basic-area-chart',
@@ -17,6 +17,7 @@ export class BasicAreaChartComponent {
   @Input() labels !: string[];
   @Input() legend !: ApexLegend;
   @Input() subtitle !: ApexTitleSubtitle;
+  @Input() fill !: ApexFill;
   data: number[];
 
 
@@ -25,7 +26,8 @@ export class BasicAreaChartComponent {
     this.series = [
       {
         name: "STOCK ABC",
-        data: this.data
+        data: this.data,
+        color: "#A7FF0D"
       }
     ],
       this.chart = {
@@ -33,7 +35,7 @@ export class BasicAreaChartComponent {
         height: 350,
         zoom: {
           enabled: false
-        }
+        },
       },
       this.dataLabels = {
         enabled: false
@@ -61,6 +63,19 @@ export class BasicAreaChartComponent {
         show: true,
         horizontalAlign: "left"
       }
+    this.fill = {
+      colors: ["purple"],
+      gradient: {
+        shade: 'dark',
+        type: "horizontal",
+        shadeIntensity: 0.8,
+        gradientToColors: undefined,
+        inverseColors: true,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 50, 100]
+      },
+    }
   }
 
 

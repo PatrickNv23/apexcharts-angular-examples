@@ -16,6 +16,7 @@ import { MixedChartsComponent } from './pages/mixed-charts/mixed-charts.componen
 import { MultipleYAxisComponent } from './pages/mixed-charts/multiple-yaxis/multiple-yaxis.component';
 import { PieChartsComponent } from './pages/pie-charts/pie-charts.component';
 import { SimplePieChartComponent } from './pages/pie-charts/simple-pie-chart/simple-pie-chart.component';
+import { SimpleDonutChartComponent } from './pages/pie-charts/simple-donut-chart/simple-donut-chart.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SimplePieChartComponent } from './pages/pie-charts/simple-pie-chart/sim
     MixedChartsComponent,
     MultipleYAxisComponent,
     PieChartsComponent,
-    SimplePieChartComponent
+    SimplePieChartComponent,
+    SimpleDonutChartComponent
   ],
   imports: [
     BrowserModule,

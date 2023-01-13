@@ -25,34 +25,49 @@ export class MultipleYAxisComponent {
       {
         name: "Income",
         type: "column",
-        data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6]
+        data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6],
+        color: "#83FF33"
       },
       {
         name: "Cashflow",
         type: "column",
-        data: [1.1, 3, 3.1, 4, 4.1, 4.9, 6.5, 8.5]
+        data: [1.1, 3, 3.1, 4, 4.1, 4.9, 6.5, 8.5],
+        color: "#6833FF"
       },
       {
         name: "Revenue",
         type: "line",
-        data: [20, 29, 37, 36, 44, 45, 50, 58]
+        data: [20, 29, 37, 36, 44, 45, 50, 58],
+        color: "#33FFF6"
       }
     ],
       this.chart = {
         height: 350,
         type: "line",
-        stacked: false
+        stacked: false,
+
       },
       this.dataLabels = {
-        enabled: false
+        enabled: true,
+        style: {
+          fontWeight: "bold"
+        },
+        background: {
+          foreColor: "black",
+          borderColor: "black",
+          borderRadius: 3
+        },
+        dropShadow: {
+          enabled: false
+        }
       },
       this.stroke = {
         width: [1, 1, 4]
       },
       this.title = {
         text: "XYZ - Stock Analysis (2009 - 2016)",
-        align: "left",
-        offsetX: 110
+        align: "center",
+        //offsetX: 110
       },
       this.xaxis = {
         categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]
@@ -138,5 +153,8 @@ export class MultipleYAxisComponent {
         horizontalAlign: "left",
         offsetX: 40
       }
+    this.fill = {
+      colors: ["#83FF33", "#6833FF"]
+    }
   }
 }

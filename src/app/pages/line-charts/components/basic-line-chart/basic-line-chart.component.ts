@@ -22,7 +22,7 @@ export class BasicLineChartComponent {
       {
         name: "Desktops",
         data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
-        color: "blue"
+        color: "#FFE90D"
       }
     ]
     this.chart = {
@@ -34,10 +34,16 @@ export class BasicLineChartComponent {
       foreColor: "blue"
     }
     this.dataLabels = {
-      enabled: true
+      enabled: true,
+      background: {
+        foreColor: "black",
+        borderColor: "black"
+      }
     }
     this.stroke = {
-      curve: "straight"
+      curve: "straight",
+      width: [10],
+      dashArray: 2
     }
     this.title = {
       text: "Product Trends by Month",
